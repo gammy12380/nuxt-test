@@ -20,7 +20,11 @@
         >
           <div class="citys" v-for="cityArr in cityArray" :key="cityArr">
             <div class="city">
-              <img :src="city[cityArr].img" :alt="city[cityArr].en" class="cityImg" />
+              <img
+                :src="city[cityArr].img"
+                :alt="city[cityArr].en"
+                class="cityImg"
+              />
               <div class="bg-opacity"></div>
               <div class="position">
                 <img
@@ -163,6 +167,7 @@ export default {
     }
     &:nth-child(n + 8) {
       height: 100%;
+      margin-bottom: -1px;
     }
     &:nth-child(9),
     &:nth-child(10),
@@ -215,16 +220,50 @@ export default {
 @media screen and (max-width: 991px) {
   .hotCity {
     width: 100%;
+    .citys-box {
+      overflow-y: hidden;
+      overflow-x: scroll;
+      width: 720px;
+      &::-webkit-scrollbar {
+        border-radius: 10px;
+        height: 8px;
+        background-color: rgb(219, 212, 212);
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(transparent, #aaa);
+      }
+    }
+    .citys-box {
+      width: 80%;
+      .citys-wrap {
+        width: 800px;
+        height: 200px;
+      }
+      .arrow-left,
+      .arrow-right {
+        display: none;
+      }
+    }
   }
-  .citys-box{
-    overflow: scroll;
-  }
-  .citys-wrap {
-    width: 800px;
-    height: 200px;
-  }
-  .arrow-left,.arrow-right{
-    display: none;
+}
+@media screen and (max-width: 768px) {
+  .hotCity-wrap {
+    margin: 0 0 50px;
+    .citys-box {
+      width: 100%;
+      .citys {
+        &:first-child {
+          margin-left: 15px;
+        }
+        &:last-child {
+          margin-right: 15px;
+        }
+        &:nth-child(14) {
+          margin-right: 15px;
+        }
+      }
+    }
   }
 }
 </style>

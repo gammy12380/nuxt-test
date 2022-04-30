@@ -1,5 +1,5 @@
 <template>
-  <div class="hotRestaurant">
+  <div class="hotScenicspot">
     <h3>
       <svg
         width="20"
@@ -17,9 +17,9 @@
       </svg>
       熱門景點
     </h3>
-    <div class="restaurant-wrap">
+    <div class="scenicspot-wrap">
       <div
-        class="restaurant"
+        class="scenicspot"
         v-for="rest in restaurantInfo"
         :key="rest.ScenicSpotID"
       >
@@ -66,9 +66,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.hotRestaurant {
+.hotScenicspot {
   width: 100%;
   margin: 50px 0;
+  padding: 15px;
   @include Center;
   flex-direction: column;
   h3 {
@@ -80,12 +81,12 @@ export default {
     }
   }
 }
-.restaurant-wrap {
-  width: 1200px;
+.scenicspot-wrap {
+  width: 1140px;
   @include Center;
   flex-wrap: wrap;
 }
-.restaurant {
+.scenicspot {
   height: 275px;
   cursor: pointer;
   position: relative;
@@ -139,13 +140,24 @@ export default {
 }
 
 @media screen and (max-width: 1199px) {
-  .restaurant-wrap {
+  .scenicspot-wrap {
     width: 960px;
+  }
+    .scenicspot {
+    height: 275px;
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+    width: calc(25% - 20px);
+    margin: 20px 10px;
   }
 }
 @media screen and (max-width: 991px) {
-  .restaurant-wrap {
-    width: 100%;
+  .scenicspot-wrap {
+    width: 720px;
+  }
+  .scenicspot {
+    width: calc(33.3% - 20px);
   }
 }
 </style>

@@ -5,7 +5,7 @@
       <div class="navBar">
         <div class="logo">
           <svg
-            width="99"
+            width="90"
             height="57"
             viewBox="0 0 99 57"
             fill="none"
@@ -198,8 +198,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 1200px;
-  max-width: 1200px;
-  height: 57px;
+  height: 100%;
   padding: 29px 108px 18px;
   ul {
     list-style: none;
@@ -227,15 +226,49 @@ export default {
   }
 }
 @media screen and (max-width: 1199px) {
-  .navBar{
+  .navBar {
     width: 100%;
     padding: 29px 50px 18px;
   }
 }
 @media screen and (max-width: 768px) {
-  .navBar{
+  .navBar {
     width: 100%;
+    height: 100%;
     padding: 29px 30px 18px;
+    background: #fff;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      z-index: -1;
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      height: 50px;
+      background: #0d0b0c;
+      opacity: 0.3;
+      filter: blur(4px);
+    }
+    &::before {
+      left: 0;
+      transform: rotate(-3deg);
+    }
+    &::after {
+      right: 0;
+      transform: rotate(3deg);
+    }
+    ul {
+      li {
+        a {
+          margin: 0 8px;
+        }
+        .nav-icon {
+          margin-right: 5px;
+        }
+      }
+    }
   }
+  
 }
 </style>

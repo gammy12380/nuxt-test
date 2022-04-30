@@ -164,7 +164,6 @@ export default {
 }
 
 .banner-wrap {
-  max-width: 1200px;
   width: 1200px;
   position: relative;
   padding: 30px;
@@ -184,12 +183,12 @@ export default {
     filter: blur(4px);
   }
   &::before {
-    left: 0;
-    transform: rotate(-3deg);
+    left: 10px;
+    transform: rotate(-5deg);
   }
   &::after {
-    right: 0;
-    transform: rotate(3deg);
+    right: 10px;
+    transform: rotate(5deg);
   }
 }
 .banner-bus {
@@ -293,5 +292,27 @@ export default {
 }
 
 @media screen and (max-width: 1199px) {
+  .banner-wrap {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner-wrap {
+    background: none;
+    margin-top: 30px;
+    margin-bottom: 0;
+    &::before,
+    &::after {
+      display: none;
+    }
+    .banner {
+      width: 100%;
+      height: 100%;
+      background: none;
+    }
+    .banner-title {
+      display: none;
+    }
+  }
 }
 </style>

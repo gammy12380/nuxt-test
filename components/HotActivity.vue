@@ -141,9 +141,6 @@ export default {
     }
   }
 }
-.activity-wrap {
-  width: 1200px;
-}
 .activity-box {
   width: 100%;
   display: flex;
@@ -280,6 +277,19 @@ export default {
 @media screen and (max-width: 1199px) {
   .hotActivity {
     width: 960px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hotActivity {
+    width: 720px;
+  }
+  .activity-box{
+    justify-content: center;
+  }
+  .activity {
+    position: relative;
+    background: #fff;
+    width: 80%;
   }
 }
 </style>

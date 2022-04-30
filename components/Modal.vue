@@ -94,14 +94,8 @@
       />
       <div class="modal-text">
         <div class="btn-wrap">
-          <button
-            class="prev-btn"
-            @click="changePicture(-1)"
-          ></button>
-          <button
-            class="next-btn"
-            @click="changePicture(1)"
-          ></button>
+          <button class="prev-btn" @click="changePicture(-1)"></button>
+          <button class="next-btn" @click="changePicture(1)"></button>
         </div>
         <h3>{{ modalData.ActivityName }}</h3>
         <p>{{ modalData.Description }}</p>
@@ -258,9 +252,11 @@ export default {
     &::-webkit-scrollbar {
       width: 4px;
       height: 8px;
+      border-radius: 10px;
       background-color: #fff;
     }
     &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
       background: linear-gradient(transparent, rgb(219, 212, 212));
     }
   }
